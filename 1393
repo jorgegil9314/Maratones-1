@@ -1,0 +1,29 @@
+//Hexagonal Tiles
+//https://www.urionlinejudge.com.br/judge/es/problems/view/1393
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main(){
+   int n;
+   while(cin >> n && n != 0){
+   int first = 0, second = 1;
+   ll next;
+   n += 2;
+
+   for (int c = 0 ; c < n ; c++ )
+   {
+      if ( c <= 1 )
+         next = c;
+      else
+      {
+         next = first + second;
+         first = second;
+         second = next;
+      }
+    }
+    cout << next << endl;
+    }
+   return 0;
+}
